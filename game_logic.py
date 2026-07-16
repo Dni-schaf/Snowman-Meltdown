@@ -1,9 +1,14 @@
 import random
 import ascii_art
 
+
 # List of secret words
-WORDS = ["python", "git", "github", "snowman", "meltdown"]
-MAX_GUESSES = 3
+WORDS = ["python", "conflict", "api", "json", "fuzzysearch", "iterate"
+         "git", "github", "snowman", "meltdown", "set", "dictionary",
+         "string", "list", "tuple", "hash", "hashtable", "integer",
+         "float", "library", "push", "commit", "stage", "merge", "pull"]
+MAX_GUESSES = 10
+
 
 def get_random_word():
     """Selects a random word from the list."""
@@ -23,9 +28,11 @@ def display_game_state(mistakes, secret_word, guessed_letters):
     print("Word: ", display_word)
     print("\n")
 
+
 def valid_guess(guess):
     """Checks if guess is valid."""
     return len(guess) == 1 and guess.isalpha()
+
 
 def play_game():
     secret_word = get_random_word()
@@ -42,7 +49,9 @@ def play_game():
         guessed_letters.append(guess)
         if guess not in secret_word:
             mistakes += 1
+
         display_game_state(mistakes, secret_word, guessed_letters)
+
         if set(secret_word).issubset(set(guessed_letters)):
             print("Congratulations, you saved the snowman!")
             break
