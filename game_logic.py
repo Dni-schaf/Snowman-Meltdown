@@ -3,7 +3,7 @@ import ascii_art
 
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
-
+MAX_GUESSES = 3
 
 def get_random_word():
     """Selects a random word from the list."""
@@ -31,11 +31,17 @@ def play_game():
     print("Welcome to Snowman Meltdown!")
     display_game_state(mistakes, secret_word, guessed_letters)
 
-
-    # For now, simply prompt the user once:
-    guess = input("Guess a letter: ").lower()
-    print("You guessed:", guess)
-
+    while mistakes < MAX_GUESSES:
+        guess = input("Guess a letter: ").lower()
+        guessed_letters.append(guess)
+        if guess not in secret_word:
+            mistakes += 1
+        display_game_state(mistakes, secret_word, guessed_letters)
+        if set(secret_word).issubset(set(guessed_letters)):
+            print("Congratulations, you saved the snowman!")
+            break
+    else:
+        print(f"Game Over! The word was: {secret_word}")
 
 if __name__ == "__main__":
     play_game()
