@@ -23,6 +23,10 @@ def display_game_state(mistakes, secret_word, guessed_letters):
     print("Word: ", display_word)
     print("\n")
 
+def valid_guess(guess):
+    """Checks if guess is valid."""
+    return len(guess) == 1 and guess.isalpha()
+
 def play_game():
     secret_word = get_random_word()
     guessed_letters = []
@@ -33,6 +37,8 @@ def play_game():
 
     while mistakes < MAX_GUESSES:
         guess = input("Guess a letter: ").lower()
+        while not valid_guess(guess):
+            guess = input("Invalid input! Please enter exactly one letter: ").lower()
         guessed_letters.append(guess)
         if guess not in secret_word:
             mistakes += 1
