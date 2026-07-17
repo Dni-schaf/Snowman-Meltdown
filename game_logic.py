@@ -3,7 +3,10 @@ import ascii_art
 import word_lib
 
 """
-Beschreibung der spiellogic
+This controls a round of the game. It validates user input, 
+saves the entries, and provides feedback. 
+`max_guesses` specifies how many incorrect letters the player 
+is allowed to enter before the game ends.
 """
 
 MAX_GUESSES = 10  #must match ascii_art.STAGES - 1

@@ -1,8 +1,10 @@
 import game_logic
 
+
 """
-Beschreibung aufbau porjekt
+Here the game starts and restarts again until the user exits it.
 """
+
 
 def main():
     """Main entry point of the application running the game loop."""
