@@ -2,35 +2,37 @@ import random
 import ascii_art
 import word_lib
 
+"""
+Beschreibung der spiellogic
+"""
 
-MAX_GUESSES = 10
+MAX_GUESSES = 10  #must match ascii_art.STAGES - 1
 
 
-def get_random_word():
+def get_random_word() -> str:
     """Selects a random word from the list."""
-    return word_lib.WORDS[random.randint(0, len(word_lib.WORDS) - 1)]
+    return random.choice(word_lib.WORDS)
 
 
-def display_game_state(mistakes, secret_word, guessed_letters):
-    # Display the snowman stage for the current number of mistakes.
+def display_game_state(mistakes: int, secret_word: str, guessed_letters: list[str]) -> None:
+    """Print the current status of the snowman and the word to the screen."""
     print(ascii_art.STAGES[mistakes])
-    # Build a display version of the secret word.
     display_word = ""
     for letter in secret_word:
         if letter in guessed_letters:
             display_word += letter + " "
         else:
             display_word += "_ "
-    print("Word: ", display_word)
-    print("\n")
+    print(f"Word: {display_word}\n")
 
 
-def valid_guess(guess):
+def valid_guess(guess: str) -> bool:
     """Checks if guess is valid."""
     return len(guess) == 1 and guess.isalpha()
 
 
 def play_game():
+    """Runs a single round of Snowman Meltdown from start to finish."""
     secret_word = get_random_word()
     guessed_letters = []
     mistakes = 0

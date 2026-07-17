@@ -1,3 +1,5 @@
+# len must match game_logic.MAX_GUESSES
+
 STAGES = [
     # Stufe 0:
     """
