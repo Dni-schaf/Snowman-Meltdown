@@ -24,12 +24,18 @@
 
 An interactive, Hangman-style word puzzle game for the terminal, written in Python. Save the snowman from melting by guessing the secret word letter by letter!
 
+
+   ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+   ![License](https://img.shields.io/badge/license-MIT-green)
+
+
 ## Features
 
 * **Charming ASCII Art:** A detailed, 10-stage snowman melting animation.
 * **Robust Input Validation:** Protected against invalid characters, numbers, and accidental multi-letter inputs.
 * **Play-Again Loop:** Start a new game instantly without having to restart the script.
 * **Clean Code Architecture:** Fully modularized and designed according to official **PEP 8 Guidelines**.
+* **No external dependencies**
 
 ---
 
@@ -41,10 +47,15 @@ This game requires **Python 3.9 or newer** installed on your system.
    ```bash
     git clone https://github.com/Dni-schaf/Snowman-Meltdown.git
     cd Snowman-Meltdown
+   ```
    
 2. **Run the game:**
    ```bash
     python main.py
+   ```
+3. **Play!**
+
+   Guess one letter at a time. After 10 wrong guesses, the snowman melts completely.
 
 
 ---
@@ -82,4 +93,4 @@ This project was a major milestone in my Python journey. While building it, I de
 ## License
 
 This project is licensed under the MIT License – feel free to modify, share, or use it as inspiration for your own projects!
-</br>MIT — see [LICENSE](LICENSE).
+<br>MIT — see [LICENSE](LICENSE).
